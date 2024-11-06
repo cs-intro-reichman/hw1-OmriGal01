@@ -12,15 +12,9 @@ public class TimeFormat {
 		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
-        int tensHours = hours / 10;
-		int onesHours = hours % 10;
 		int tensMins = minutes / 10;
 		int onesMins = minutes % 10;
-		if (tensHours != 0) {
-			System.out.print(tensHours);
-		}
-		//If the first digit of the hours is 0, we do not print it.
-		System.out.print(onesHours + ":" + tensMins + "" + onesMins + " ");
+		System.out.print((hours % 12) + ":" + tensMins + "" + onesMins + " ");
 		if (hours < 12) {
 			System.out.println("AM");
 		} else {
