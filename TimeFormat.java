@@ -12,6 +12,19 @@ public class TimeFormat {
 		int hours = Integer.parseInt("" + args[0].charAt(0) + args[0].charAt(1));
 		// Does the same with the minutes part of the input.
 		int minutes = Integer.parseInt("" + args[0].charAt(3) + args[0].charAt(4));
-        // Replace this comment with the rest of your code
+		int tensMins = minutes / 10;
+		int onesMins = minutes % 10;
+		int displayHours = hours;
+		String amOrPm = "AM";
+		if (hours == 12) {
+			amOrPm = "PM";
+		}
+		else if (hours > 12) {
+			displayHours = hours - 12;
+			amOrPm = "PM";
+		}
+		//To convert from 24H to 12H format, we need to subtract 12H from the given hour time only if it is larger than 12,
+		//but if the value is exactly 12 we need to display PM.
+		System.out.print(displayHours + ":" + tensMins + "" + onesMins + " " + amOrPm);
 	}
 }
